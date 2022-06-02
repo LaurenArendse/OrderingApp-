@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderingApp.HomePage"
+             IconImageSource="home.png">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand"
+                        Margin="0">
+            
+
+                <AbsoluteLayout BackgroundColor="White"  HeightRequest="100" WidthRequest="250" Margin="0" Padding="0">
+                <StackLayout>
+                    <Image Source="swag.jpeg" />
+                    <Frame OutlineColor="Black"
+                   BackgroundColor="White"
+                   Margin="20,50,20,50"
+                   Padding="10">
+                        <Label Text=".NET T-SHIRT STYLES"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Large"
+                           TextColor="Black"
+                           FontAttributes="Bold"/>
+                    </Frame>
+                    
+                    <CarouselView ItemsSource="{Binding Styles}" IndicatorView="indicatorview">
+                       
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout HorizontalOptions="CenterAndExpand" Margin="20">
+                                    <Image Source="{Binding Image}" HeightRequest="360" />
+                                    <Label Text="{Binding Description}" 
+                                           FontSize="Medium"
+                                           FontAttributes="Italic"
+                                           HorizontalTextAlignment="Center"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+
+                    </CarouselView>
+                </StackLayout>
+                <IndicatorView
+            x:Name="indicatorview"
+            AbsoluteLayout.LayoutBounds="0.5,0.97,100,120"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            IndicatorColor="Gray"
+            IndicatorSize="10"
+            SelectedIndicatorColor="Black" />
+               
+            </AbsoluteLayout>
+
+
+            <!--<Image>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped=""
+                </Image.GestureRecognizers>
+            </Image>-->
+            
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

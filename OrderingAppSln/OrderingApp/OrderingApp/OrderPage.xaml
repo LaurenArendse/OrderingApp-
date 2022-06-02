@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderingApp.OrderPage"
+             IconImageSource="order.png">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Margin="0" BackgroundColor="White">
+
+                <Label Text="PLACE YOUR .NET SWAG ORDER"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontSize="Large" 
+                       Margin="20,40,20,10"
+                       HorizontalTextAlignment="Center"
+                       TextDecorations="Underline"/>
+
+                <!--<Frame OutlineColor="FloralWhite" 
+                   BackgroundColor="White"
+                   Margin="0,0,0,20" Padding="10">
+                <Label Text="Place your order..."
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontSize="Large" 
+                       HorizontalTextAlignment="Center"/>
+            </Frame>-->
+
+            <Label Text="Name"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Medium"
+                   HorizontalTextAlignment="Start"
+                   Margin="20,10,20,0"/>
+            <Entry Keyboard="Text"
+                   Placeholder="Enter name"
+                   Margin="20,0,20,10"
+                   x:Name="NameEntry"
+                   Text="{Binding Name}"
+                   />
+
+            <Label Text="Gender"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Medium"
+                    Margin="20,0,20,0"
+                   HorizontalTextAlignment="Start" />
+            <Picker Title="Select gender"
+                    VerticalOptions="CenterAndExpand"
+                    Margin="20,0,20,10"
+                    x:Name="GenderPicker"
+                    SelectedItem="{Binding Gender}">
+
+                <Picker.Items>
+                    <x:String>Male</x:String>
+                    <x:String>Female</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="T-shirt size"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Medium"
+                   Margin="20,0,20,0"
+                   HorizontalTextAlignment="Start" />
+            <Picker Title="Select size"
+                    VerticalOptions="CenterAndExpand"
+                   Margin="20,0,20,10"
+                    x:Name="SizePicker"
+                    SelectedItem="{Binding Size}">
+
+                <Picker.Items>
+                    <x:String>Extra small (XS)</x:String>
+                    <x:String>Small (S)</x:String>
+                    <x:String>Medium (M)</x:String>
+                    <x:String>Large (L)</x:String>
+                    <x:String>Extra large (XL)</x:String>
+                    <x:String>Extra Extra large (XXL)</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="T-shirt color"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Medium"
+                   Margin="20,0,20,0"
+                   HorizontalTextAlignment="Start" />
+            <Picker Title="Select color"
+                    VerticalOptions="CenterAndExpand"
+                   Margin="20,0,20,10"
+                    x:Name="ColorPicker"
+                     SelectedItem="{Binding Color}">
+
+                <Picker.Items>
+                    <x:String>White</x:String>
+                    <x:String>Gray</x:String>
+                    <x:String>Black</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Date of order"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Medium"
+                   Margin="20,0,20,0"
+                   HorizontalTextAlignment="Start" />
+            <DatePicker Format="D"
+                        VerticalOptions="CenterAndExpand"
+                        Margin="20,0,20,10"
+                        Date="{Binding Date}"
+                        x:Name="DatePicker"/>
+
+            <Label Text="Shipping Address"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Medium"
+                   Margin="20,0,20,0"
+                   HorizontalTextAlignment="Start" />
+            <Entry Keyboard="Text"
+                   Placeholder="Enter address"
+                   Margin="20,0,20,10"
+                   x:Name="AddressEntry" 
+                   Text="{Binding Address}"/>
+            <Button x:Name="PlaceOrderButton" FontSize="Medium" FontAttributes="Bold" Text="Place Order" TextColor="White" BorderColor="Black" BackgroundColor="Black" Clicked="PlaceOrderButton_Clicked" Margin="20,0,20,50"/>
+        </StackLayout>
+        </ScrollView>
+       
+    </ContentPage.Content>
+</ContentPage>

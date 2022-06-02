@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderingApp.OrderListPage"
+             IconImageSource="list.png">
+    <ContentPage.Content>
+        <StackLayout Margin="0" BackgroundColor="White">
+            <Frame OutlineColor="Black"
+                   BackgroundColor="White"
+                   Margin="20,40,20,20" Padding="10">
+                <Label Text="ORDER HISTORY"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontSize="Large" 
+                       HorizontalTextAlignment="Center"/>
+            </Frame>
+
+            <ListView ItemsSource="{Binding PlaceOrders}" HasUnevenRows="True" BackgroundColor="White" SeparatorColor="Black" SeparatorVisibility="Default" SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            
+                             <StackLayout >
+                                <Label Text="{Binding Date}" FontSize="Micro" Margin="10,0,0,0" />
+                                <Label Text="{Binding Name}" Margin="10,0,0,0" FontAttributes="Bold" FontSize="Medium" TextColor="Black" TextTransform="Uppercase"/>
+
+                                <Label Text="{Binding Gender}" Margin="10,0,0,0" FontSize="Small" TextColor="Black" FontAttributes="Italic"  />
+
+                                <Label Text="{Binding Size}" Margin="10,0,0,0" FontSize="Micro" TextColor="Black" FontAttributes="Bold" />
+                                <Label Text="{Binding Color}" Margin="10,0,0,0" FontSize="Micro" TextColor="Black" FontAttributes="Bold"/>
+                                <Label Text="{Binding Address}" Margin="10,0,0,20" TextColor="Black" FontAttributes="Bold" />
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
